@@ -1,14 +1,11 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
-    <title>My Website</title>
-
+    <link type="text/css" href="{% static 'css/style_cont.css' %}" rel="stylesheet" />
+    <title>Contacts</title>
 </head>
 <body>
   <!-- Верхняя панель с логотипом, поисковой строкой и кнопкой корзины -->
@@ -36,19 +33,43 @@
         </nav>
     </header>
 
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{% static 'img/slide1.png' %}" alt="Slide 1"></div>
-            <div class="swiper-slide"><img src="{% static 'img/slide2.png' %}" alt="Slide 2"></div>
-            <!-- Добавь больше слайдов, если нужно -->
+    <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 400; margin-top: 30px; margin-bottom: 30px; color:#393d3f;">Контакты</div>
+
+    <div class="contact-container">
+        <div class="contact-text">
+            <p>Мы всегда рады помочь вам!</p>
+            <p>По любым вопросам обращайтесь по телефону или пишите нам на электронную почту.</p><br>
+            <h3>Контактные данные</h3><br>
+            <p>Телефон: <br>+7 (952) 608-15-52<br>+7 (951) 828-69-77</p><br>
+            <p>Email: homeglam@gmail.com</p>
         </div>
-        <!-- Если нужны кнопки "предыдущий" и "следующий" -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="contact-form">
+            <div class="form-header">
+                <h3>Обратная связь</h3>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Введите сообщение:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
+        </div>
     </div>
 
 
-  <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
+
+
+
+    <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
         <div>
             <nav>
                 <ul style="list-style-type: none; padding: 0;">
@@ -70,10 +91,6 @@
             <p>г. Ростов-на-Дону <br/> © 2024 Климова К.С.</p>
         </div>
     </footer>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-
 
 </body>
 </html>
