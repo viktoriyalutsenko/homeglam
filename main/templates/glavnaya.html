@@ -1,0 +1,53 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <title>My Website</title>
+
+</head>
+<body>
+  <!-- Верхняя панель с логотипом, поисковой строкой и кнопкой корзины -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="logo">HOMEGLAM</div>
+            <div class="search-box">
+                <input type="text" placeholder="Поиск">
+                <button type="submit">Поиск</button>
+            </div>
+            <button class="cart-button">Корзина</button>
+        </div>
+    </div>
+
+    <!-- Заголовок с навигацией -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Товары</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'img/slide1.png' %}" alt="Slide 1"></div>
+            <div class="swiper-slide"><img src="{% static 'img/slide2.png' %}" alt="Slide 2"></div>
+            <!-- Добавь больше слайдов, если нужно -->
+        </div>
+        <!-- Если нужны кнопки "предыдущий" и "следующий" -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+</body>
+</html>
