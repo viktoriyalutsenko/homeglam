@@ -1,14 +1,11 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
-    <title>My Website</title>
-
+    <link type="text/css" href="{% static 'css/style_cat.css' %}" rel="stylesheet" />
+    <title>Catalog</title>
 </head>
 <body>
   <!-- Верхняя панель с логотипом, поисковой строкой и кнопкой корзины -->
@@ -36,19 +33,35 @@
         </nav>
     </header>
 
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{% static 'img/slide1.png' %}" alt="Slide 1"></div>
-            <div class="swiper-slide"><img src="{% static 'img/slide2.png' %}" alt="Slide 2"></div>
-            <!-- Добавь больше слайдов, если нужно -->
-        </div>
-        <!-- Если нужны кнопки "предыдущий" и "следующий" -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+<div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 400; margin-top: 30px; margin-bottom: 30px; color:#393d3f;">Каталог</div>
+    <div class="image-container">
+        <a href="catalog-page1.html">
+            <div>
+                <img src="{% static 'img/cat1.png' %}" alt="Image 1">
+                <div class="image-title">Ароматические свечи</div>
+            </div>
+        </a>
+        <a href="catalog-page2.html">
+            <div>
+                <img src="{% static 'img/cat2.png' %}" alt="Image 2">
+                <div class="image-title">Диффузоры для дома</div>
+            </div>
+        </a>
+        <a href="catalog-page3.html">
+            <div>
+                <img src="{% static 'img/cat3.png' %}" alt="Image 3">
+                <div class="image-title">Сухоцветы</div>
+            </div>
+        </a>
+        <a href="catalog-page4.html">
+            <div>
+                <img src="{% static 'img/cat4.png' %}" alt="Image 4">
+                <div class="image-title">Парфюмированные масла</div>
+            </div>
+        </a>
     </div>
 
-
-  <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
+    <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
         <div>
             <nav>
                 <ul style="list-style-type: none; padding: 0;">
@@ -70,10 +83,6 @@
             <p>г. Ростов-на-Дону <br/> © 2024 Климова К.С.</p>
         </div>
     </footer>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-
 
 </body>
 </html>
