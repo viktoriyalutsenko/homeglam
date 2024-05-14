@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'css/style_ab.css' %}" rel="stylesheet" />
+    <title>About</title>
+</head>
+<body>
+<div class="top-bar">
+        <div class="container">
+            <div class="logo">HOMEGLAM</div>
+            <div class="search-box">
+                <input type="text" placeholder="Поиск">
+                <button type="submit">Поиск</button>
+            </div>
+            <button class="cart-button">Корзина</button>
+        </div>
+    </div>
+
+    <!-- Заголовок с навигацией -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'glavnaya' %}">Главная</a></li>
+                <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                <li><a href="#">Товары</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="text-align: center; font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 400; margin-top: 30px; margin-bottom: 30px; color:#393d3f;">О нас</div>
+    <img src="{% static 'img/ab.png' %}" alt="About Image" style="width: 365px; height: 365px; float: left; margin-right: 20px; margin-left: 70px; margin-bottom: 30px;">
+    <p style="font-size: 20px; line-height: 1.5; margin-top: 90px;">
+        Добро пожаловать в наш интернет-магазин HOME GLAM! Здесь вы найдёте всё необходимое для создания уютной и стильной атмосферы в вашем жилище.
+    <br/>
+    <br/>
+        Мы предлагаем качественные товары, доступные цены и удобные условия доставки. Наш магазин постоянно обновляется и расширяется, чтобы удовлетворить самые взыскательные вкусы наших клиентов.
+    <br/>
+    <br/>
+        Не упустите возможность обновить ваш дом с помощью нашего сайта! Заходите, выбирайте и наслаждайтесь комфортом и красотой вашего дома.
+    </p>
+
+    <div class="reviews-section">Отзывы</div>
+        <div class="reviews-slider">
+            <div class="review-item-wrapper">
+                <div class="review-item">
+                    <p class="review-text">"Я очень довольна покупкой! Качество товара на высоте, он прекрасно выполняет свои функции и долго служит.<br>Очень рада, что выбрала именно его. Я рекомендую его всем, кто хочет получить отличный продукт по разумной цене."</p>
+                    <p class="review-author">- Анна, Москва</p>
+                </div>
+            </div>
+            <div class="review-item-wrapper">
+                <div class="review-item">
+                    <p class="review-text">"Большой выбор товаров для дома и быстрая доставка.<br>Меня особенно порадовало, что цены на многие позиции оказались очень приятными и доступными."</p>
+                    <p class="review-author">- Иван, Санкт-Петербург</p>
+                </div>
+            </div>
+            <div class="review-item-wrapper">
+                <div class="review-item">
+                    <p class="review-text">"Все товары, которые я приобретала, отличаются прекрасным исполнением и долговечностью.<br>Они не только красиво смотрятся, но и отлично выполняют свои функции."</p>
+                    <p class="review-author">- Мария, Ростов-на-Дону</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-btn">Предыдущий</button>
+            <button class="next-btn">Следующий</button>
+        </div>
+    </div>
+
+    <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
+        <div>
+            <nav>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="{% url 'glavnaya' %}">Главная</a></li>
+                    <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                    <li><a href="#">Товары</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <p>Email: <br/> homeglam@gmail.com</p>
+        </div>
+        <div>
+            <p>Номер телефона: <br/> +7 (952) 608-15-52<br>+7 (951) 828-69-77</p>
+        </div>
+        <div>
+            <p>г. Ростов-на-Дону <br/> © 2024 Климова К.С.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script_ab.js' %}"></script>
+
+</body>
+</html>

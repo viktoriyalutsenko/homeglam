@@ -1,0 +1,170 @@
+        .top-bar {
+            background-color: #fff;
+            color: #a7cab1;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .top-bar .container {
+            max-width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar .logo {
+            font-size: 24px;
+        }
+
+        .top-bar .search-box {
+            margin-right: 20px;
+        }
+
+        .top-bar .search-box input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 50vw;
+        }
+
+        .top-bar .search-box button {
+            background-color: #a7cab1;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .top-bar .cart-button {
+            background-color: #a7cab1;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Стили для заголовка */
+        header {
+            background-color: #a7cab1;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            height: 30px; /* Возвращаем прежнее значение высоты заголовка */
+            margin-top: 10px; /* Добавляем отступ сверху */
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 10px;
+        }
+
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        header nav ul li a {
+            color: #393d3f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        footer nav ul li a {
+            color: #393d3f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .reviews-section {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 400;
+            margin: 70px auto 30px;
+            color: #393d3f;
+            width: fit-content;
+        }
+
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+        .about-section img {
+            width: 100%;
+            max-width: 365px;
+            height: auto;
+            float: none;
+            margin: 0 0 20px;
+        }
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 0;
+            text-align: justify;
+            padding: 0 20px;
+        }
+
+
+    .reviews-slider {
+        display: flex;
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .review-item-wrapper {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-right: 20px;
+    }
+
+    .review-item {
+        text-align: center;
+    }
+
+    .review-text {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .review-author {
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    .slider-controls {
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .slider-controls button {
+        background-color: #a7cab1;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 5px;
+    }
