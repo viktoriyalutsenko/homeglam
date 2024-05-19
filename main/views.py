@@ -26,4 +26,4 @@ def category_page(request, category_id):
     context = {
         'category': category
     }
-    return render(request, 'category_page.html', context)
+    return render(request, 'catalog_page.html', context)
