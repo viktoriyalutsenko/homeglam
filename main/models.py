@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from PIL import Image
+from io import BytesIO
+from django.core.files.base import ContentFile
 
 class Admin(AbstractUser):
     # Добавьте дополнительные поля, если необходимо
@@ -24,3 +27,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            image = Image.open(self.image)
+            image.thumbnail((250, 250), resample=Image.BICUBIC)
+            output = BytesIO()
+            image.save(output, format='PNG', optimize=True, transparent=True)
+            self.image.save(self.image.name, ContentFile(output.getvalue()), save=False)
+        super().save(*args, **kwargs)
