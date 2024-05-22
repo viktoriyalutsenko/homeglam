@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" href="{% static 'css/style_cat.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'css/catalog_page.css' %}" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>{{ category.name }}</title>
 </head>
@@ -17,21 +17,20 @@
                 <input type="text" placeholder="Поиск">
                 <button type="submit">Поиск</button>
             </div>
-            <button class="cart-button">Корзина</button>
+            <a href="{% url 'cart' %}" class="cart-button">Корзина</a>
         </div>
     </div>
 
     <!-- Заголовок с навигацией -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'glavnaya' %}">Главная</a></li>
-                <li><a href="{% url 'catalog' %}">Каталог</a></li>
-                <li><a href="#">Товары</a></li>
-                <li><a href="{% url 'about' %}">О нас</a></li>
-                <li><a href="{% url 'contacts' %}">Контакты</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="{% url 'glavnaya' %}">Главная</a></li>
+            <li><a href="{% url 'catalog' %}">Каталог</a></li>
+            <li><a href="{% url 'about' %}">О нас</a></li>
+            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+        </ul>
+    </nav>
     </header>
 
 <div class="row">
@@ -49,6 +48,7 @@
                 <h3 class="product-name">{{ product.name }}</h3>
                 <p class="product-description">{{ product.description }}</p>
                 <p class="product-price">{{ product.price }} руб.</p>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
             </div>
         </div>
     </div>
@@ -61,7 +61,6 @@
                 <ul style="list-style-type: none; padding: 0;">
                     <li><a href="{% url 'glavnaya' %}">Главная</a></li>
                     <li><a href="{% url 'catalog' %}">Каталог</a></li>
-                    <li><a href="#">Товары</a></li>
                     <li><a href="{% url 'about' %}">О нас</a></li>
                     <li><a href="{% url 'contacts' %}">Контакты</a></li>
                 </ul>
@@ -76,7 +75,7 @@
         <div>
             <p>г. Ростов-на-Дону <br/> © 2024 Климова К.С.</p>
         </div>
-    </footer>
+</footer>
 
 </body>
 </html>

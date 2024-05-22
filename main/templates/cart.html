@@ -1,14 +1,14 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
+
+{% block content %}
+
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
-    <title>My Website</title>
-
+    <link type="text/css" href="{% static 'css/cart.css' %}" rel="stylesheet" />
+    <title>Cart</title>
 </head>
 <body>
   <!-- Верхняя панель с логотипом, поисковой строкой и кнопкой корзины -->
@@ -35,19 +35,34 @@
         </nav>
     </header>
 
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{% static 'img/slide1.png' %}" alt="Slide 1"></div>
-            <div class="swiper-slide"><img src="{% static 'img/slide2.png' %}" alt="Slide 2"></div>
-            <!-- Добавь больше слайдов, если нужно -->
-        </div>
-        <!-- Если нужны кнопки "предыдущий" и "следующий" -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
+
+<h1>Корзина</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Товар</th>
+            <th>Количество</th>
+            <th>Цена</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price }} руб.</td>
+            <td>
+                <a href="{% url 'remove_from_cart' item.id %}">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>Итого: {{ total_price }} руб.</p>
 
 
-  <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
+    <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
         <div>
             <nav>
                 <ul style="list-style-type: none; padding: 0;">
@@ -69,9 +84,7 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-
-
+  <script src="{% static 'js/cart.js' %}"></script>
+{% endblock %}
 </body>
 </html>
