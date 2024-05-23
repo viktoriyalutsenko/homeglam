@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Category
-from .models import Cart, Product
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import Category, Product, Cart
 
 def glavnaya(request):
     return render(request, 'glavnaya.html')
@@ -26,11 +27,7 @@ def contacts(request):
     return render(request, 'contacts.html')
 
 def cart(request):
-    return render(request, 'cart.html')
-
-def cart(request):
-    session_key = request.session.session_key
-    cart_items = Cart.objects.filter(session_key=session_key)
+    cart_items = Cart.objects.filter(session_key=request.session.session_key)
     total_price = sum(item.product.price * item.quantity for item in cart_items)
     context = {
         'cart_items': cart_items,
@@ -38,25 +35,33 @@ def cart(request):
     }
     return render(request, 'cart.html', context)
 
+@csrf_exempt
 def add_to_cart(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    session_key = request.session.session_key
-    if not session_key:
-        request.session.save()
-        session_key = request.session.session_key
-
-    cart_item, created = Cart.objects.get_or_create(
-        session_key=session_key,
-        product=product,
-        defaults={'quantity': 1}
-    )
-    if not created:
-        cart_item.quantity += 1
-        cart_item.save()
-
-    return redirect('cart')
+    if request.method == 'POST':
+        try:
+            product = get_object_or_404(Product, id=product_id)
+            quantity = int(request.POST.get('quantity', 1))
+            cart_item, created = Cart.objects.get_or_create(
+                session_key=request.session.session_key,
+                product=product,
+                defaults={'quantity': quantity}
+            )
+            if not created:
+                cart_item.quantity += quantity
+                cart_item.save()
+            return HttpResponse(status=204)
+        except Exception as e:
+            return HttpResponse(str(e), status=400)
+    else:
+        return HttpResponse('Method not allowed', status=405)
 
 def remove_from_cart(request, cart_item_id):
-    cart_item = get_object_or_404(Cart, id=cart_item_id)
-    cart_item.delete()
-    return redirect('cart')
+    if request.method == 'POST':
+        try:
+            cart_item = Cart.objects.get(id=cart_item_id, session_key=request.session.session_key)
+            cart_item.delete()
+            return HttpResponse(status=204)
+        except Cart.DoesNotExist:
+            return HttpResponse('Item not found in cart', status=404)
+    else:
+        return HttpResponse('Method not allowed', status=405)

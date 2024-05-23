@@ -4,9 +4,7 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.base import ContentFile
 
-
 class Admin(AbstractUser):
-    # Добавьте дополнительные поля, если необходимо
     phone = models.CharField(max_length=20, null=True, blank=True)
     address = models.TextField(null=True, blank=True)
 
@@ -40,7 +38,7 @@ class Product(models.Model):
 
 class Cart(models.Model):
     session_key = models.CharField(max_length=40)
-    product = models.ForeignKey('main.Product', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

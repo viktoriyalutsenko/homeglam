@@ -127,3 +127,28 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'main.Admin'
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
+
+# Настройки сессий
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'  # или 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_AGE = 1209600  # две недели
+SESSION_SAVE_EVERY_REQUEST = True

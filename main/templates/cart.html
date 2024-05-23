@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-{% block content %}
-
 {% load static %}
 <html lang="en">
 <head>
@@ -11,7 +8,7 @@
     <title>Cart</title>
 </head>
 <body>
-  <!-- Верхняя панель с логотипом, поисковой строкой и кнопкой корзины -->
+    <!-- Верхняя панель с логотипом, поисковой строкой и кнопкой корзины -->
     <div class="top-bar">
         <div class="container">
             <div class="logo">HOMEGLAM</div>
@@ -35,32 +32,33 @@
         </nav>
     </header>
 
-
-<h1>Корзина</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Товар</th>
-            <th>Количество</th>
-            <th>Цена</th>
-            <th>Действия</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in cart_items %}
-        <tr>
-            <td>{{ item.product.name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.product.price }} руб.</td>
-            <td>
-                <a href="{% url 'remove_from_cart' item.id %}">Удалить</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<p>Итого: {{ total_price }} руб.</p>
-
+    <h1>Корзина</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th>Удалить</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.product.price }} руб.</td>
+                <td>
+                    <form action="{% url 'remove_from_cart' item.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="remove-from-cart-btn">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Итого: {{ total_price }} руб.</p>
 
     <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
         <div>
@@ -83,8 +81,5 @@
             <p>г. Ростов-на-Дону <br/> © 2024 Климова К.С.</p>
         </div>
     </footer>
-
-  <script src="{% static 'js/cart.js' %}"></script>
-{% endblock %}
 </body>
 </html>
