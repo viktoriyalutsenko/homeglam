@@ -32,33 +32,52 @@
         </nav>
     </header>
 
-    <h1>Корзина</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Товар</th>
-                <th>Количество</th>
-                <th>Цена</th>
-                <th>Удалить</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in cart_items %}
-            <tr>
-                <td>{{ item.product.name }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.product.price }} руб.</td>
-                <td>
-                    <form action="{% url 'remove_from_cart' item.id %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="remove-from-cart-btn">Удалить</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <p>Итого: {{ total_price }} руб.</p>
+    <div class="cart-container">
+        <h1>Корзина</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.product.price }} руб.</td>
+                    <td>
+                        <form action="{% url 'remove_from_cart' item.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="remove-from-cart-btn">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p>Итого: {{ total_price }} руб.</p>
+
+        <div class="order-form">
+            <h2>Оформление заказа</h2>
+            <p>Отправьте заявку на заказ, и мы свяжемся с вами!</p>
+            <form action="{% url 'cart' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="first_name">Имя:</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
 
     <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
         <div>

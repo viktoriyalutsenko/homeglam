@@ -152,3 +152,4 @@ LOGGING = {
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'  # или 'django.contrib.sessions.backends.db'
 SESSION_COOKIE_AGE = 1209600  # две недели
 SESSION_SAVE_EVERY_REQUEST = True
+

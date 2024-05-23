@@ -1,3 +1,9 @@
+        body {
+            color: #393D3F; /* Применяем цвет текста */
+            margin: 0;
+            padding: 0;
+        }
+
         .top-bar {
             background-color: #fff;
             color: #a7cab1;
@@ -79,6 +85,89 @@
             color: #393d3f;
             text-decoration: none;
             font-size: 16px;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            color: #393D3F;
+        }
+
+        .order-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .order-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .order-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .order-form input,
+        .order-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        .order-form textarea {
+            height: 100px;
+        }
+
+        .order-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #A7CAB1;;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .order-form button:hover {
+            background-color: #45a049;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #393D3F;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-table th {
+            background-color: #f2f2f2;
+            color: #393D3F;
+        }
+
+        .cart-table tr:hover {
+            background-color: #f5f5f5;
         }
 
         footer nav ul li a {
