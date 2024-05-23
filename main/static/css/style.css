@@ -18,25 +18,6 @@
             font-size: 24px;
         }
 
-        .top-bar .search-box {
-            margin-right: 20px;
-        }
-
-        .top-bar .search-box input[type="text"] {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 500px;
-        }
-
-        .top-bar .search-box button {
-            background-color: #a7cab1;
-            color: #fff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
 
         .top-bar .cart-button {
             background-color: #a7cab1;
@@ -93,8 +74,11 @@
         height: 500px;
         }
 
+
         footer nav ul li a {
             color: #393d3f;
             text-decoration: none;
             font-size: 16px;
         }
+
+

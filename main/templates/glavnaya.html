@@ -8,17 +8,110 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
     <title>My Website</title>
+    <style>
+    /* Стили для первого блока */
+.block-1 {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
 
+.block-1-image {
+    justify-self: end;
+    margin-right: 10%;
+}
+
+.block-1-image img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.block-1-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #393d3f;
+    margin-right: 20%;
+}
+
+/* Стили для второго блока */
+.block-2 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-2-image {
+    justify-self: start;
+    margin-left: 10%;
+}
+
+.block-2-image img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.block-2-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #393d3f;
+    margin-left: 20%;
+}
+
+/* Стили для блока с информацией о компании */
+.company-info {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.company-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #393d3f;
+}
+
+.company-content {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.company-text {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 10%;
+    color: #393d3f;
+}
+
+.company-image {
+    flex: 1;
+}
+
+.company-image img {
+    width: 500px;
+    height: 500px;
+    margin-right: 20%;
+}
+    </style>
 </head>
 <body>
   <!-- Верхняя панель с логотипом, поисковой строкой и кнопкой корзины -->
     <div class="top-bar">
         <div class="container">
             <div class="logo">HOMEGLAM</div>
-            <div class="search-box">
-                <input type="text" placeholder="Поиск">
-                <button type="submit">Поиск</button>
-            </div>
             <a href="{% url 'cart' %}" class="cart-button">Корзина</a>
         </div>
     </div>
@@ -46,6 +139,55 @@
         <div class="swiper-button-prev"></div>
     </div>
 
+<!-- Блок 1 -->
+<div class="block-1">
+    <div class="block-1-image">
+        <img src="{% static 'img/gl1.png' %}" alt="Image 6">
+    </div>
+    <div class="block-1-text">
+        <p>
+            Окунитесь в мир роскошных ароматов и элегантного стиля с "HOME GLAM" - компанией, посвященной созданию уютной и вдохновляющей атмосферы в вашем доме.
+            <br><br>
+            Мы предлагаем тщательно отобранные товары, которые наполнят ваше пространство изысканными ароматами и станут изящными акцентами в интерьере.
+            <br><br>
+            Наша коллекция ароматических свечей - это настоящие произведения искусства. Каждая свеча создана по уникальному рецепту, чтобы подарить вам ощущение умиротворения и расслабления.
+        </p>
+    </div>
+</div>
+
+<!-- Блок 2 -->
+<div class="block-2">
+    <div class="block-2-text">
+        <p>
+             Наши ароматические диффузоры деликатно распространяют эфирные масла, наполняя воздух нотками спокойствия и гармонии.
+            <br><br>
+            Наша миссия - помочь вам трансформировать ваш дом в оазис гармонии и спокойствия, где вы сможете отдохнуть душой и насладиться моментами умиротворения.
+            <br><br>
+            Мы понимаем, что окружающая среда играет ключевую роль в нашей повседневной жизни, и поэтому стремимся создавать продукты, которые будут вдохновлять и наполнять ваше пространство теплом.
+        </p>
+    </div>
+    <div class="block-2-image">
+        <img src="{% static 'img/gl2.png' %}" alt="Image 2">
+    </div>
+</div>
+
+<div class="company-info">
+    <p class="company-title">Компания "HOME GLAM"</p>
+    <div class="company-content">
+        <div class="company-text">
+            <p>
+                В нашем каталоге вы найдете изысканные свечи ручной работы, наполняющие воздух мягкими, обволакивающими ароматами. Наши ароматические диффузоры деликатно распространяют эфирные масла, наполняя дом приятными и успокаивающими нотками.
+                <br><br>
+                Для любителей естественной красоты мы представляем коллекцию сухоцветов, которые не только украсят ваш интерьер, но и будут источать легкие, природные ароматы. Также в нашем ассортименте вы найдете парфюмированные масла, которые можно использовать для ароматизации помещений.
+                <br><br>
+                Мы тщательно подбираем каждый продукт, чтобы предложить вам только самое лучшее. Наша миссия - создавать уютную и гармоничную атмосферу в вашем доме, наполняя его изысканными ароматами и элегантными декоративными элементами. Присоединяйтесь к нашему сообществу ценителей прекрасного и откройте для себя новые грани домашнего уюта с "HOME GLAM".
+            </p>
+        </div>
+        <div class="company-image">
+            <img src="{% static 'img/gl3.png' %}" alt="Image 8">
+        </div>
+    </div>
+</div>
 
   <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
         <div>
