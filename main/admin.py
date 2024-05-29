@@ -44,7 +44,7 @@ class OrderAdmin(admin.ModelAdmin):
             send_mail(
                 subject=subject,
                 message=message,
-                from_email='your_email@example.com',
+                from_email='hghomeglam@gmail.com',
                 recipient_list=[obj.customer_email],
             )
 

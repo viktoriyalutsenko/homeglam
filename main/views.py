@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Category, Product, Cart, FeedbackMessage, Order, OrderItem
+from django.core.mail import send_mail
 
 def glavnaya(request):
     return render(request, 'glavnaya.html')
@@ -106,6 +107,15 @@ def contacts(request):
             message=message
         )
         feedback_message.save()
+
+        # Отправка ответа на почту
+        response_message = "Спасибо за ваше сообщение! Мы рассмотрим его в ближайшее время и свяжемся с вами."
+        send_mail(
+            subject="Ответ на ваше сообщение",
+            message=response_message,
+            from_email="hghomeglam@gmail.com",
+            recipient_list=[email],
+        )
 
         # Перенаправление на страницу контактов после отправки формы
         return redirect('contacts')
