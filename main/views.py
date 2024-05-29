@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Category, Product, Cart
+from .models import Category, Product, Cart, FeedbackMessage, Order, OrderItem
 
 def glavnaya(request):
     return render(request, 'glavnaya.html')
@@ -29,6 +29,33 @@ def contacts(request):
 def cart(request):
     cart_items = Cart.objects.filter(session_key=request.session.session_key)
     total_price = sum(item.product.price * item.quantity for item in cart_items)
+
+    if request.method == 'POST':
+        customer_name = request.POST.get('first_name')
+        customer_email = request.POST.get('email')
+
+        # Создание нового заказа
+        order = Order.objects.create(
+            user=request.user,
+            customer_name=customer_name,
+            customer_email=customer_email,
+            total_price=total_price
+        )
+
+        # Создание записей OrderItem для каждого товара в корзине
+        for cart_item in cart_items:
+            OrderItem.objects.create(
+                order=order,
+                product=cart_item.product,
+                quantity=cart_item.quantity
+            )
+
+        # Очистка корзины
+        Cart.objects.filter(session_key=request.session.session_key).delete()
+
+        # Перенаправление на главную страницу
+        return redirect('glavnaya')
+
     context = {
         'cart_items': cart_items,
         'total_price': total_price
@@ -65,3 +92,22 @@ def remove_from_cart(request, cart_item_id):
             return HttpResponse('Item not found in cart', status=404)
     else:
         return HttpResponse('Method not allowed', status=405)
+
+def contacts(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        # Сохранение сообщения в базе данных
+        feedback_message = FeedbackMessage.objects.create(
+            name=name,
+            email=email,
+            message=message
+        )
+        feedback_message.save()
+
+        # Перенаправление на страницу контактов после отправки формы
+        return redirect('contacts')
+
+    return render(request, 'contacts.html')

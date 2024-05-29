@@ -42,7 +42,8 @@
             <div class="form-header">
                 <h3>Обратная связь</h3>
             </div>
-            <form>
+            <form action="{% url 'contacts' %}" method="post">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" required>
