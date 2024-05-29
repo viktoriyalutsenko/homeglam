@@ -153,3 +153,10 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'  # или 'django.
 SESSION_COOKIE_AGE = 1209600  # две недели
 SESSION_SAVE_EVERY_REQUEST = True
 
+# Настройки электронной почты
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'hghomeglam@gmail.com'
+EMAIL_HOST_PASSWORD = 'hpna kalc azks dckb'
