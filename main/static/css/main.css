@@ -1,0 +1,366 @@
+@media (min-width: 1000px) {
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .top-bar {
+            background-color: #fff;
+            color: #a7cab1;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar .logo {
+            font-size: 24px;
+        }
+
+
+        .top-bar .cart-button {
+            background-color: #a7cab1;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Стили для заголовка */
+        header {
+            background-color: #a7cab1;
+            color: #fff;
+            padding: 10px 10px;
+            text-align: center;
+            height: 30px; /* Возвращаем прежнее значение высоты заголовка */
+            margin-top: 10px; /* Добавляем отступ сверху */
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        header nav ul li a {
+            color: #393d3f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+
+        .swiper-container {
+        height: 500px;
+        }
+
+
+        footer nav ul li a {
+            color: #393d3f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+.block-1 {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-1-image {
+    width: 500px;
+    justify-self: end;
+    margin-right: 10%;
+}
+
+.block-1-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.block-1-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ff0000;
+    margin-right: 20%;
+}
+
+/* Стили для второго блока */
+.block-2 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-2-image {
+    width: 500px;
+    justify-self: start;
+    margin-left: 10%;
+}
+
+.block-2-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.block-2-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #393d3f;
+    margin-left: 20%;
+}
+
+/* Стили для блока с информацией о компании */
+.company-info {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.company-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #393d3f;
+}
+
+.company-content {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.company-text {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 10%;
+    color: #393d3f;
+}
+
+.company-image {
+    width: 500px;
+}
+
+.company-image img {
+    width: 100%;
+    height: auto;
+    margin-left: 10%;
+}
+}
+
+@media (max-width: 1000px) {
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .top-bar {
+            background-color: #fff;
+            color: #a7cab1;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar .logo {
+            font-size: 24px;
+        }
+
+
+        .top-bar .cart-button {
+            background-color: #a7cab1;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Стили для заголовка */
+        header {
+            background-color: #a7cab1;
+            color: #fff;
+            padding: 10px 10px;
+            text-align: center;
+            height: 30px; /* Возвращаем прежнее значение высоты заголовка */
+            margin-top: 10px; /* Добавляем отступ сверху */
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        header nav ul li a {
+            color: #393d3f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+
+        .swiper-container {
+        height: 500px;
+        }
+
+
+        footer nav ul li a {
+            color: #393d3f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+.block-1 {
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-1-image {
+    width: 300px;
+    justify-self: start;
+    margin-left: 10%;
+}
+
+.block-1-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.block-1-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #393d3f;
+    margin-right: 20%;
+}
+
+/* Стили для второго блока */
+.block-2 {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-2-image {
+    width: 300px;
+    justify-self: start;
+}
+
+.block-2-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.block-2-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #393d3f;
+}
+
+/* Стили для блока с информацией о компании */
+.company-info {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.company-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #393d3f;
+}
+
+.company-content {
+    margin-top: 20px;
+    align-items: center;
+}
+
+.company-text {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #393d3f;
+}
+
+.company-image {
+    width: 300px;
+}
+
+.company-image img {
+    width: 100%;
+    height: auto;
+}
+}
+
+
+
+

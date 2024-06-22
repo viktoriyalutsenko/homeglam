@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="logo">HOMEGLAM</div>
+            <a href="{% url 'cart' %}" class="cart-button">Корзина</a>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'glavnaya' %}">Главная</a></li>
+                <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer style="background-color: #A7CAB1; width: 100%; height: 198px; display: flex; justify-content: space-around; align-items: center;">
+        <div>
+            <nav>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="{% url 'glavnaya' %}">Главная</a></li>
+                    <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <p>Email: <br/> hghomeglam@gmail.com</p>
+        </div>
+        <div>
+            <p>Номер телефона: <br/> +7 (952) 608-15-52<br>+7 (951) 828-69-77</p>
+        </div>
+        <div>
+            <p>г. Ростов-на-Дону <br/> © 2024 Климова К.С.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
